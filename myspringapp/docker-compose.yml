@@ -1,0 +1,8 @@
+version: '2'
+services:
+    mongodb:
+        image: mongo:latest
+        container_name: "spring_mongo"
+        ports:
+            - 27017:27017
+    
