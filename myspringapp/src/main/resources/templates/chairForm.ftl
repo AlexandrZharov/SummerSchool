@@ -16,7 +16,7 @@
             Name:<@spring.formInput "chairForm.name" "" "text"/><br>
             Chief:<@spring.formInput "chairForm.chief", "", "text"/><br>
             Description:<@spring.formInput "chairForm.description", "", "text"/><br>
-            <input type="submit" value="Create"/>
+            <input type="submit" value="Submit"/>
         </form>
     </fieldset>
 </div>

@@ -18,7 +18,7 @@
             <th>Description </th>
             <th>Chief</th>
             <th>Delete</th>
-            <th>Update</th>
+            <th>Info</th>
         </tr>
         <#list list as item>
             <tr>
@@ -29,7 +29,10 @@
                         <input type="button" value="delete" class="btn-danger">
                     </a>
                 </td>
-                <td>Update</td>
+                <td><a href="http://localhost:8081/web/chair/update/${item.id}">
+                        Update
+                    </a>
+                </td>
             </tr>
         </#list>
     </table>

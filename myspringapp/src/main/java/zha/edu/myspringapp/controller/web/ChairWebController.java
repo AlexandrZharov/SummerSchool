@@ -53,10 +53,31 @@ public class ChairWebController {
     }
 
     @RequestMapping(value = "/create", method = RequestMethod.POST)
-    public String createChair(Model model, @ModelAttribute("chairForm") ChairForm chairForm){
+    public String createChair(@ModelAttribute("chairForm") ChairForm chairForm){
         Chair chair = new Chair(chairForm.getName(), chairForm.getChief(), chairForm.getDescription());
         chairService.create(chair);
+        return "redirect:/web/chair/get/list";
+    }
+
+    @RequestMapping(value = "/update/{id}", method = RequestMethod.GET)
+    public String createChair(Model model, @PathVariable("id") String id){
+        Chair chair = chairService.get(id);
+        ChairForm chairForm = new ChairForm(
+                chair.getId(),
+                chair.getName(),
+                chair.getChief(),
+                chair.getDescription()
+        );
+
+        model.addAttribute("chairForm", chairForm);
         return "chairForm";
     }
 
+    @RequestMapping(value = "/update/{id}", method = RequestMethod.POST)
+    public String createChair(@PathVariable("id") String id, @ModelAttribute("chairForm") ChairForm chairForm){
+        Chair chair = new Chair(chairForm.getName(), chairForm.getChief(), chairForm.getDescription());
+        chair.setId(id);
+        chairService.update(chair);
+        return "redirect:/web/chair/get/list";
+    }
 }
