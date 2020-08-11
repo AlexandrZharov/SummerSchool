@@ -8,6 +8,10 @@
 </head>
 <body>
 <div>
+    <div>
+        <a href="http://localhost:8081/web/chair/refresh">Refresh to basic DB</a>
+        <a href="http://localhost:8081/web/chair/create">Create new chair</a>
+    </div>
     <table border="3" bgcolor="#f0f8ff">
         <tr>
             <th>Name</th>
@@ -19,7 +23,7 @@
         <#list list as item>
             <tr>
                 <td>${item.name}</td>
-                <td>${item.desc}</td>
+                <td>${item.description}</td>
                 <td>${item.chief}</td>
                 <td><a href="http://localhost:8081/web/chair/delete/${item.id}">
                         <input type="button" value="delete" class="btn-danger">

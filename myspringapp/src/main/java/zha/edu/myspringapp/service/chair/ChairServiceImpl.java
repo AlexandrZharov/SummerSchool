@@ -3,6 +3,7 @@ package zha.edu.myspringapp.service.chair;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import zha.edu.myspringapp.dao.chair.DaoChair;
+import zha.edu.myspringapp.dao.datastorage.DataFake;
 import zha.edu.myspringapp.model.Chair;
 import zha.edu.myspringapp.repository.ChairRepository;
 
@@ -13,6 +14,9 @@ public class ChairServiceImpl implements ChairService {
 
     @Autowired
     ChairRepository chairRepository;
+
+    @Autowired
+    DataFake dataFake;
 
     @Override
     public Chair create(Chair chair) {
@@ -42,5 +46,11 @@ public class ChairServiceImpl implements ChairService {
     @Override
     public List<Chair> getAll() {
         return chairRepository.findAll();
+    }
+
+    @Override
+    public void refresh() {
+        chairRepository.deleteAll();
+        chairRepository.saveAll(dataFake.getChairs());
     }
 }

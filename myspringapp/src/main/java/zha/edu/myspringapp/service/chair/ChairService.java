@@ -10,4 +10,5 @@ public interface ChairService {
     Chair update(Chair chair);
     Chair delete(String id);
     List<Chair> getAll();
+    void refresh();
 }

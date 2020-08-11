@@ -10,30 +10,30 @@ public class Group {
     @Id
     private String id;
     private String name;
-    private String desc;
+    private String description;
     private Chair chair;
     private LocalDateTime createdAt, updatedAt;
 
     public Group() {
     }
 
-    public Group(String name, String desc, Chair chair) {
+    public Group(String name, String description, Chair chair) {
         this.name = name;
-        this.desc = desc;
+        this.description = description;
         this.chair = chair;
     }
 
-    public Group(String id, String name, String desc, Chair chair) {
+    public Group(String id, String name, String description, Chair chair) {
         this.id = id;
         this.name = name;
-        this.desc = desc;
+        this.description = description;
         this.chair = chair;
     }
 
-    public Group(String id, String name, String desc, Chair chair, LocalDateTime createdAt, LocalDateTime updatedAt) {
+    public Group(String id, String name, String description, Chair chair, LocalDateTime createdAt, LocalDateTime updatedAt) {
         this.id = id;
         this.name = name;
-        this.desc = desc;
+        this.description = description;
         this.chair = chair;
         this.createdAt = createdAt;
         this.updatedAt = updatedAt;
@@ -55,12 +55,12 @@ public class Group {
         this.name = name;
     }
 
-    public String getDesc() {
-        return desc;
+    public String getDescription() {
+        return description;
     }
 
-    public void setDesc(String desc) {
-        this.desc = desc;
+    public void setDescription(String description) {
+        this.description = description;
     }
 
     public Chair getChair() {
@@ -105,7 +105,7 @@ public class Group {
         return "Group{" +
                 "id='" + id + '\'' +
                 ", name='" + name + '\'' +
-                ", desc='" + desc + '\'' +
+                ", desc='" + description + '\'' +
                 ", chair=" + chair +
                 ", createdAt=" + createdAt +
                 ", updatedAt=" + updatedAt +

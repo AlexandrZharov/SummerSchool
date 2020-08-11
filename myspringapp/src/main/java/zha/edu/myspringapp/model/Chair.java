@@ -11,40 +11,40 @@ public class Chair {
     private String id;
     private String name;
     private String chief;
-    private String desc;
+    private String description;
     private LocalDateTime createdAt, updatedAt;
 
-    public Chair(String id, String name, String chief, String desc, LocalDateTime createdAt, LocalDateTime updatedAt) {
+    public Chair(String id, String name, String chief, String description, LocalDateTime createdAt, LocalDateTime updatedAt) {
         this.id = id;
         this.name = name;
         this.chief = chief;
-        this.desc = desc;
+        this.description = description;
         this.createdAt = createdAt;
         this.updatedAt = updatedAt;
     }
 
-    public Chair(String name, String chief, String desc) {
+    public Chair(String name, String chief, String description) {
         this.name = name;
         this.chief = chief;
-        this.desc = desc;
+        this.description = description;
     }
 
-    public Chair(String id, String name, String chief, String desc) {
+    public Chair(String id, String name, String chief, String description) {
         this.id = id;
         this.name = name;
         this.chief = chief;
-        this.desc = desc;
+        this.description = description;
     }
 
     public Chair() {
     }
 
-    public String getDesc() {
-        return desc;
+    public String getDescription() {
+        return description;
     }
 
-    public void setDesc(String desc) {
-        this.desc = desc;
+    public void setDescription(String description) {
+        this.description = description;
     }
 
     public LocalDateTime getCreatedAt() {
