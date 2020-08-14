@@ -108,4 +108,15 @@ public class Chair {
     public int hashCode() {
         return Objects.hash(id);
     }
+
+    public String toJSON() {
+        return "{" +
+                "\"id\"" + ":" + "\"" + this.getId() + "\"" +
+                ",\"name\"" + ":" + "\"" + this.getName() + "\"" +
+                ",\"description\"" + ":" + "\"" + this.getDescription() + "\"" +
+                ",\"chief\"" + ":" +"\"" + this.getChief() + "\"" +
+                ",\"createdAt\"" + ":" +"\"" + this.getCreatedAt() + "\"" +
+                ",\"updatedAt\"" + ":" +"\"" + this.getUpdatedAt() + "\"" +
+                "}";
+    }
 }

@@ -1,12 +1,10 @@
 package zha.edu.myspringapp.controller.web;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.MediaType;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.*;
 import zha.edu.myspringapp.form.ChairForm;
 import zha.edu.myspringapp.model.Chair;
 import zha.edu.myspringapp.service.chair.ChairService;
@@ -79,5 +77,11 @@ public class ChairWebController {
         chair.setId(id);
         chairService.update(chair);
         return "redirect:/web/chair/get/list";
+    }
+
+    @RequestMapping(value = "/info/{id}", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
+    @ResponseBody
+    String infoChair(@PathVariable("id") String id, Model model){
+        return chairService.get(id).toJSON();
     }
 }

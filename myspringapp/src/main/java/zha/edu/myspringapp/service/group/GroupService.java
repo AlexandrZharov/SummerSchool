@@ -1,13 +1,7 @@
 package zha.edu.myspringapp.service.group;
 
 import zha.edu.myspringapp.model.Group;
+import zha.edu.myspringapp.service.IGenericService;
 
-import java.util.List;
-
-public interface GroupService {
-    Group create(Group chair);
-    Group get(String id);
-    Group update(Group chair);
-    Group delete(String id);
-    List<Group> getAll();
+public interface GroupService extends IGenericService<Group> {
 }
