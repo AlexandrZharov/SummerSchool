@@ -34,9 +34,9 @@ public class ChairServiceImpl implements ChairService, ChairBusiness {
     }
 
     @Override
-    public Chair update(Chair chair) {
-        chair.setUpdatedAt(LocalDateTime.now());
-        return chairRepository.save(chair);
+        public Chair update(Chair chair) {
+            chair.setUpdatedAt(LocalDateTime.now());
+            return chairRepository.save(chair);
     }
 
     @Override
